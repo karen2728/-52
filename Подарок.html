@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Случайный выбор подарка 🎮</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f0f0, #d1c4e9);
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #7e57c2;
+      color: white;
+      font-size: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .gift {
+      width: 150px;
+      height: 150px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gift img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .gift:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #673ab7;
+      color: white;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #7e57c2;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🎁 Выбери подарок и получи случайную игру! 🎲
+</header>
+
+<div class="container">
+  <div class="gift" onclick="revealGame()">
+    <img src="https://avatars.mds.yandex.net/i?id=359ab39ff1a07b4c0cdb37b67ff3feab_l-5238581-images-thumbs&n=13" alt="Подарок 1">
+    <p>Подарок 1</p>
+  </div>
+  <div class="gift" onclick="revealGame()">
+    <img src="https://avatars.mds.yandex.net/i?id=359ab39ff1a07b4c0cdb37b67ff3feab_l-5238581-images-thumbs&n=13" alt="Подарок 2">
+    <p>Подарок 2</p>
+  </div>
+  <div class="gift" onclick="revealGame()">
+    <img src="https://avatars.mds.yandex.net/i?id=359ab39ff1a07b4c0cdb37b67ff3feab_l-5238581-images-thumbs&n=13" alt="Подарок 3">
+    <p>Подарок 3</p>
+  </div>
+</div>
+
+<div class="result" id="result">
+  Поздравляем! Вы выиграли: <span id="gameName"></span> 🎮
+  
+  <p>Чтобы забрать подарок напишите сюда 89628732212</p>
+</div>
+
+<footer>
+</footer>
+
+<script>
+  // Список игр. Добавь сюда свои игры.
+  const games = [
+    "Darkwood",
+    "Stardew Valley",
+    "Beholder",
+    "The Long Dark",
+    "Dead Cells",
+    "Terraria",
+    "TABS",
+    "Brotato",
+    "Don't Starve Together",
+    "Supraland"
+  ];
+
+  // Функция для выбора случайной игры.
+  function revealGame() {
+    // Получаем случайный индекс игры.
+    const randomIndex = Math.floor(Math.random() * games.length);
+    const selectedGame = games[randomIndex];
+
+    // Показываем результат.
+    document.getElementById("gameName").innerText = selectedGame;
+    document.getElementById("result").style.display = "block";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поздравляем с Днём Рождения, Годей!</title>
+  <style>
+    /* Стили для сайта */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffcfdf, #b0edff);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #ff6090;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      animation: slideIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #ff6090;
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .message {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #555;
+    }
+
+    .decorations {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .decorations img {
+      width: 95px;
+      margin: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #ffa4c4;
+      color: #fff;
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      padding: 15px 30px;
+      background: #ff6090;
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff4077;
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>С Днём Рождения, Годей! 🎉</h1>
+    <p>Сегодня твой день, и он наполнен радостью, счастьем и памятными мгновениями.</p>
+  </header>
+
+  <div class="container">
+    <h2>Дорогой Годей!</h2>
+    <p class="message">
+      Сегодня мы поздравляем одного из самых удивительных людей на свете — тебя! 🌟
+      Пусть каждый миг твоей жизни будет наполнен светом, радостью и теплом, а каждый день приносит
+      новые возможности, вдохновения и улыбки. Пусть здоровье будет крепким, мечты сбываются, а любовь 
+      и дружба всегда окружает тебя.  
+    </p>
+    <p class="message">
+      Желаем тебе невероятных успехов во всем, что ты делаешь. Помни — тебе по плечу всё, и ты способен 
+      на великие свершения! Пусть счастье будет твоим постоянным спутником, а судьба дарит только 
+      добрые сюрпризы. 🎁
+    </p>
+
+    <p class="message">
+      Никогда не переставай мечтать, ведь мечты делают нашу жизнь ярче. Сегодня мы вместе с тобой отмечаем твой праздник, вспоминаем все достижения и с нетерпением ждем великих вещей, которые ждут впереди. 
+      Ты особенный, и сегодняшний день — это лишь маленькая часть того, что ты достоин. 🎂
+    </p>
+    <div id="countdown"></div>
+<script>
+  const birthday = new Date('2026-01-28T00:00:00'); // Укажи дату следующего ДР
+  function updateCountdown() {
+    const now = new Date();
+    const diff = birthday - now;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    document.getElementById('countdown').innerHTML = 
+      `До следующего Дня Рождения: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд!`;
+  }
+  setInterval(updateCountdown, 1000);
+</script>
+
+    <div class="decorations">
+    </div>
+  <a href="http://localhost:8080/%D0%9F%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D0%BA.html" target="_blank" class="btn">Забрать подарок!🎉</a>
+  <footer>
+    <p>С любовью и наилучшими пожеланиями,</p>
+    <p>Твои друзья ❤️</p>
+  </footer>
+</body>
+</html>
